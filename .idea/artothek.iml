@@ -12,6 +12,12 @@
   <component name="GemRequirementsHolder" version="3">
     <requirement>
       <requirement>
+        <dependency name="apotomo" version="0" bound="GREATER_OR_EQUAL" lib="apotomo" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="capybara" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
@@ -24,7 +30,7 @@
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="devise" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+        <dependency name="devise" version="1.2.rc" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
@@ -54,6 +60,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="shoulda" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="sqlite3" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
@@ -62,6 +74,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/.bundle" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -112,6 +125,33 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] warden (v1.0.3, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/warden-1.0.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rack (v1.2.1, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/rack-1.2.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] activemodel (v3.0.3, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/activemodel-3.0.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bundler (v1.0.10, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/bundler-1.0.10)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] sqlite3 (v1.3.3, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/sqlite3-1.3.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] haml-rails (v0.3.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/haml-rails-0.3.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rails (v3.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/rails-3.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activeresource (v3.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/activeresource-3.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] nokogiri (v1.4.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/nokogiri-1.4.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activerecord (v3.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/activerecord-3.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activemodel (v3.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/activemodel-3.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] mail (v2.2.15, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/mail-2.2.15)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionmailer (v3.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/actionmailer-3.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] arel (v2.0.8, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/arel-2.0.8)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] treetop (v1.4.9, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/treetop-1.4.9)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] polyglot (v0.3.1, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/polyglot-0.3.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activesupport (v3.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/activesupport-3.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] railties (v3.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/railties-3.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionpack (v3.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/actionpack-3.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] apotomo (v1.0.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/apotomo-1.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] capybara (v0.4.1.2, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/capybara-0.4.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] shoulda (v2.11.3, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/shoulda-2.11.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-rails (v2.5.0, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/rspec-rails-2.5.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-core (v2.5.1, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/rspec-core-2.5.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-expectations (v2.5.0, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/rspec-expectations-2.5.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec (v2.5.0, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/rspec-2.5.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] cells (v3.4.4, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/cells-3.4.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-mocks (v2.5.0, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/rspec-mocks-2.5.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] hooks (v0.1.3, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/hooks-0.1.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] onfire (v0.1.2, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/onfire-0.1.2)" level="application" />
   </component>
 </module>
 

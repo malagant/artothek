@@ -1,0 +1,7 @@
+- if current_user
+  %p
+    You are logged in as #{current_user.email}. #{link_to "Logout", destroy_user_session_path}.
+- else
+  %p
+    #{link_to "Sign in", new_user_session_path} Not registered? #{link_to "Sign up", new_user_registration_path}
+

@@ -31,8 +31,9 @@ gem 'sqlite3'
 # end
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem "cucumber-rails", :group => :test
+gem "shoulda", :group => :test
 gem "capybara", :group => :test
-gem "devise"
+gem "devise", ">= 1.2.rc"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "apotomo", :require => "apotomo"
