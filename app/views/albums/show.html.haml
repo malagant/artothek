@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @album.title
+%p
+  %b Subtitle:
+  = @album.subtitle
+%p
+  %b Description:
+  = @album.description
+%p
+  %b Issue date:
+  = @album.issue_date
+
+= link_to 'Edit', edit_user_album_path(@album)
+\|
+= link_to 'Back', user_albums_path

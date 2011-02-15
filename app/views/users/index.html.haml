@@ -1,0 +1,6 @@
+%h1 User list
+%ul
+  - @users.each do |user|
+    %li= user.email
+    #{link_to "Albums", user_albums_path(user)}
+    = link_to 'New Artist', new_user_artist_path(current_user) if current_user
