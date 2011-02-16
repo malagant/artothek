@@ -1,2 +1,5 @@
 = render :partial => 'album_list', :locals => { :albums => @user.albums }
+- if manager(@user)
+  = link_to 'New album', new_user_album_path(@user)
+  \|
 = link_to 'Back', @user

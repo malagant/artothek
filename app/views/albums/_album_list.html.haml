@@ -2,6 +2,7 @@
 
 %table
   %tr
+    %th
     %th Title
     %th Subtitle
     %th Description
@@ -10,6 +11,7 @@
 
   - albums.each do |album|
     %tr
+      %td= image_tag album.cover.url(:thumb)
       %td= link_to album.title, user_album_path(@user, album)
       %td= album.subtitle
       %td= album.description
