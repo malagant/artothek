@@ -10,7 +10,7 @@
 
   - albums.each do |album|
     %tr
-      %td= album.title
+      %td= link_to album.title, user_album_path(@user, album)
       %td= album.subtitle
       %td= album.description
       %td= album.issue_date

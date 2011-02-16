@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   %b Title:
   = @album.title
@@ -13,6 +11,8 @@
   %b Issue date:
   = @album.issue_date
 
-= link_to 'Edit', edit_user_album_path(@album)
-\|
+= render :partial => 'tracks/track_list', :locals => { :tracks => @album.tracks }
+- if manager(@album.user)
+  = link_to 'Edit', edit_user_album_path(@album)
+  \|
 = link_to 'Back', user_albums_path

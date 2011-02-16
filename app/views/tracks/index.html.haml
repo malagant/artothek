@@ -1,22 +1,3 @@
-%h1 Listing tracks
+= render :partial => 'track_list', :locals => { :tracks => @tracks }
 
-%table
-  %tr
-    %th Title
-    %th Duration
-    %th
-    %th
-    %th
-
-  - @tracks.each do |track|
-    %tr
-      %td= track.title
-      %td= track.duration
-      %td= link_to 'Edit', edit_album_track_path(@album, track)
-      %td= link_to 'Destroy', album_track_path(@album, track), :confirm => 'Are you sure?', :method => :delete
-%br
-
-- if current_user && current_user == @user
-  = link_to 'New Track', new_album_track_path(@album)
-  \|
-= link_to 'Back', user_albums_path
+= link_to 'Back', user_album_path(@album.user, @album)
