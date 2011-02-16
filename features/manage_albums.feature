@@ -2,7 +2,7 @@ Feature: Manage albums
   In order to manage albums
   User
   wants to add albums and tracks to his artists
-@wip
+
   Scenario Outline: Add a new album
     Given I am logged in as "mjohann@rails-experts.com" with password "123456"
     When I am on the new album page
@@ -17,3 +17,4 @@ Feature: Manage albums
   Examples:
     | title  | subtitle         | description | issue_date      | artist            |
     | One    | The second album | Lorem ipsum | 11 January 2010 | Helge Schneider   |
+    | Two    | The third album  | Lorem ipsum | 11 January 2010 | Helge Schneider   |

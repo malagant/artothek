@@ -47,10 +47,10 @@ Feature: Manage users
   Scenario: Anonymous user can list users
     Given I am not authenticated
     And the following users:
-      | email                          | password |
-      | mjohann@rails-experts.com      | 123456   |
-      | helge@schneider.com            | 123456   |
-      | steve@apple.com                | 123456   |
+      | email                          | password | artist        |
+      | mjohann@rails-experts.com      | 123456   | Johann Könich |
+      | helge@schneider.com            | 123456   | Otto Waalkes  |
+      | steve@apple.com                | 123456   | Jack Rabbit   |
 
     And I am on the home page
     When I go to the users page
@@ -58,5 +58,4 @@ Feature: Manage users
     And I should not see "mjohann@web.de"
     And I should see "helge@schneider.com"
     And I should see "steve@apple.com"
-    And I should see "Albums"
     And I should not see "New artist"

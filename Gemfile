@@ -11,6 +11,7 @@ gem "database_cleaner", :group => :test
 gem "machinist", ">= 2.0.0.beta2", :group => :test
 gem "faker", :group => :test
 gem "devise", ">= 1.2.rc"
+gem "simple_form"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "apotomo", :require => "apotomo"

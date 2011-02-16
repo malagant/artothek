@@ -29,6 +29,11 @@ module NavigationHelpers
     #
     when /the new album page/i
       new_user_artist_album_path(1,1)
+    #
+    # Tracks
+    #
+    when /the new album track page/i
+      new_album_track_path(1)
 
 
     # Add more mappings here.

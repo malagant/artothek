@@ -12,3 +12,7 @@ end
 Then /^I should see the following albums:$/ do |expected_albums_table|
   expected_albums_table.diff!(tableish('table tr', 'td,th'))
 end
+
+Given /^An existing album with "([^\"]*)" "([^\"]*)"$/ do |title, value|
+  @album ||= Album.make!(title => value)
+end

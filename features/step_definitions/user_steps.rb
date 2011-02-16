@@ -1,6 +1,9 @@
 Given /^the following users:$/ do |users|
   users.hashes.each do |user_data|
-    User.make!(user_data)
+    artist_name = user_data[:artist]
+    user_data.delete('artist')
+    user = User.make!(user_data)
+    user.artists = [Artist.make!(:name => artist_name)]
   end
 end
 
@@ -25,6 +28,8 @@ When /^I am logged in as "([^\"]*)" with password "([^\"]*)"$/ do |email, passwo
   @user ||= User.make!(:email => email,
              :password => password,
              :password_confirmation => password)
+  @user.artists << Artist.make!(:name => "Helge Schneider")
+
   When %[I go to the sign in page]
   And %[I fill in "Email" with "#{email}"]
   And %[I fill in "Password" with "#{password}"]

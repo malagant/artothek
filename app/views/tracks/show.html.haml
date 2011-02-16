@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @track.title
+%p
+  %b Duration:
+  = @track.duration
+
+= link_to 'Edit', edit_album_track_path(params[:album_id])
+\|
+= link_to 'Back', album_tracks_path

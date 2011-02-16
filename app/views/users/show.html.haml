@@ -1,0 +1,7 @@
+%h2 User details
+%p Email #{@user.email}
+= render :partial => 'albums/album_list', :locals => {:albums => @user.albums}
+
+= link_to 'New album', new_user_album_path(@user) if current_user == @user && !@user.artists.empty?
+= link_to 'New artist', new_user_artist_path(@user) if current_user == @user
+= link_to 'Back', user_albums_path(@user)

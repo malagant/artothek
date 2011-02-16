@@ -14,4 +14,5 @@
       %td= link_to 'Albums', user_artist_albums_path(current_user, artist)
 %br
 
-= link_to 'New Artist', new_user_artist_path(current_user)
+- if current_user && current_user == @user
+  = link_to 'New Artist', new_user_artist_path

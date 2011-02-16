@@ -1,0 +1,21 @@
+%h1 Listing albums for #{@user.email}
+
+%table
+  %tr
+    %th Title
+    %th Subtitle
+    %th Description
+    %th Issue date
+    %th{ :colspan => 4} Actions
+
+  - albums.each do |album|
+    %tr
+      %td= album.title
+      %td= album.subtitle
+      %td= album.description
+      %td= album.issue_date
+      - if current_user
+        %td= link_to 'Show', user_album_path(@user, album)
+        %td= link_to 'Edit', edit_user_album_path(current_user, album) if current_user == @user
+      %td= link_to 'Tracks', user_album_tracks_path(@user, album)
+%br
