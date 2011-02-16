@@ -33,7 +33,7 @@ module NavigationHelpers
     # Tracks
     #
     when /the new album track page/i
-      new_album_track_path(1)
+      new_user_album_track_path(1,1)
 
 
     # Add more mappings here.

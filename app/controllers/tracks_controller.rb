@@ -3,7 +3,8 @@ class TracksController < ApplicationController
   # GET /tracks
   # GET /tracks.xml
   def index
-    @album = Album.find(params[:album_id])
+    @user   = User.find(params[:user_id])
+    @album = @user.albums.find(params[:album_id])
     @tracks = @album.tracks
 
     respond_to do |format|

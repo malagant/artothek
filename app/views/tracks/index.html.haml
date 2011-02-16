@@ -17,6 +17,6 @@
 %br
 
 - if current_user && current_user == @user
-  = link_to 'New Track', new_album_track_path(@album)
+  = link_to 'New Track', new_user_album_track_path(@album)
   \|
 = link_to 'Back', user_albums_path
