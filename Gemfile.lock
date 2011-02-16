@@ -59,6 +59,7 @@ GEM
       cucumber (>= 0.8.0)
     culerity (0.2.15)
     daemons (1.0.10)
+    database_cleaner (0.6.3)
     devise (1.2.rc)
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.2)
@@ -154,6 +155,7 @@ DEPENDENCIES
   apotomo
   capybara
   cucumber-rails
+  database_cleaner
   devise (>= 1.2.rc)
   faker
   haml (>= 3.0.0)

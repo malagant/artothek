@@ -1,23 +1,16 @@
 Feature: Manage artists
   In order to manage
   Artists
-  I want to add artists
+  I want to add artists to a given user
   
-  Scenario Outline: Add a new artist only when authenticated
-    Given I am logged in as "mjohann@web.de" with password "1223456"
+  Scenario: Add a new artist only when authenticated
+    Given I am logged in as "mjohann@web.de" with password "123456"
     And I am on the home page
-    And I should see "You are logged in as mjohann@web.de"
+    Then I should see "You are logged in as mjohann@web.de"
     And I go to the new artist page
-    And I fill in "artist_name" with "<name>"
+    And I fill in "artist_name" with "Helge Schneider"
     And I press "Save"
     Then I should see "Artist was successfully created."
-
-  Examples:
-    | name  |
-    | Helge Schneider |
-    | Marek Fis       |
-    | Sascha Grammel  |
-    | Johann Könich   |
 
   Scenario: Try to add an artist as anonymous fails
     Given I am not authenticated
@@ -25,6 +18,3 @@ Feature: Manage artists
     And I should see "Sign in Not registered? Sign up"
     And I go to the new artist page
     Then I should see "Sign in"
-
-  Scenario: Trying to delete an artist fails when not authenticated
-    pending

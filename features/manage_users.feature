@@ -3,26 +3,21 @@ Feature: Manage users
   User
   wants to be registered to login
   
-  Scenario Outline: Anonymous user can register
-    Given I am on the homepage
-    When I go to the sign up page
+  Scenario: Anonymous user can register
+    Given I am not authenticated
+    And I am on the homepage
+    And I go to the sign up page
     Then I should see "Sign up"
-    And I fill in "Email" with "<email>"
-    And I fill in "Password" with "<password>"
-    And I fill in "Password confirmation" with "<password>"
+    When I fill in "Email" with "steve@apple.com"
+    And I fill in "Password" with "123456"
+    And I fill in "Password confirmation" with "123456"
     And I press "Sign up"
     Then I should be on the homepage
     Then I should see "Welcome to artothek"
 
-      Examples:
-        | email                     | password |
-        | mjohann@rails-experts.com | 123456   |
-        | helge@schneider.com       | 123456   |
-        | steve@apple.com           | 123456   |
-
   Scenario: Anonymous user can login
-    Given I am on the homepage
-    And I am registered as "mjohann@web.de" with password "123456"
+    Given I am registered as "mjohann@web.de" with password "123456"
+    And I am on the homepage
     When I go to the sign in page
     Then I should see "Sign in"
     And I fill in "Email" with "mjohann@web.de"
@@ -34,7 +29,6 @@ Feature: Manage users
 
   Scenario: Login user without credentials
     Given I am on the homepage
-    And I am registered as "mjohann@web.de" with password "123456"
     When I go to the sign in page
     Then I should see "Sign in"
     And I press "Sign in"
@@ -53,15 +47,15 @@ Feature: Manage users
   Scenario: Anonymous user can list users
     Given I am not authenticated
     And the following users:
-      | email               | password |
-      | mjohann@web.de      | 123456   |
-      | helge@schneider.com | 123456   |
-      | steve@apple.com     | 123456   |
+      | email                          | password |
+      | mjohann@rails-experts.com      | 123456   |
+      | helge@schneider.com            | 123456   |
+      | steve@apple.com                | 123456   |
 
     And I am on the home page
     When I go to the users page
     Then I should see "User list"
-    And I should see "mjohann@web.de"
+    And I should not see "mjohann@web.de"
     And I should see "helge@schneider.com"
     And I should see "steve@apple.com"
     And I should see "Albums"
