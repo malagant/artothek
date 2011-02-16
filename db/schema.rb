@@ -10,16 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215225030) do
+ActiveRecord::Schema.define(:version => 20110215215651) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
     t.string   "subtitle"
     t.text     "description"
     t.date     "issue_date"
+    t.integer  "user_id"
+    t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
   create_table "artists", :force => true do |t|
@@ -32,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20110215225030) do
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"

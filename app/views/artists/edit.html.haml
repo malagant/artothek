@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @artist
+= link_to 'Show', user_artist_path(current_user)
 \|
 = link_to 'Back', user_artists_path(current_user)

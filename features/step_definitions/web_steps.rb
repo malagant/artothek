@@ -48,6 +48,14 @@ When /^(?:|I )fill in "([^"]*)" for "([^"]*)"(?: within "([^"]*)")?$/ do |value,
   end
 end
 
+When /^I select "(.*)" as the "(.*)" date$/ do |date, date_label|  
+  day,month,year = date.split(' ')
+  
+  select year, :from => "#{date_label}_1i"
+  select month, :from => "#{date_label}_2i"
+  select day, :from => "#{date_label}_3i"
+end
+
 # Use this to fill in an entire form with data from a table. Example:
 #
 #   When I fill in the following:
@@ -217,3 +225,7 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+Then /^response should not be "([^\"]*)"$/ do |response_code|
+
+end
+

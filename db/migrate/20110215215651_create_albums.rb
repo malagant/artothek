@@ -5,6 +5,8 @@ class CreateAlbums < ActiveRecord::Migration
       t.string :subtitle
       t.text :description
       t.date :issue_date
+      t.references :user
+      t.references :artist
 
       t.timestamps
     end

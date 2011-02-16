@@ -50,3 +50,19 @@ Feature: Manage users
     Then I should be on the homepage
     Then I should see "Welcome to artothek"
 
+  Scenario: Anonymous user can list users
+    Given I am not authenticated
+    And the following users:
+      | email               | password |
+      | mjohann@web.de      | 123456   |
+      | helge@schneider.com | 123456   |
+      | steve@apple.com     | 123456   |
+
+    And I am on the home page
+    When I go to the users page
+    Then I should see "User list"
+    And I should see "mjohann@web.de"
+    And I should see "helge@schneider.com"
+    And I should see "steve@apple.com"
+    And I should see "Albums"
+    And I should not see "New artist"

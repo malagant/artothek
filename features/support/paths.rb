@@ -10,14 +10,25 @@ module NavigationHelpers
 
     when /the home\s?page/i
       root_path
+    #
+    # Users
+    #
     when /the sign\s?up page/i
       new_user_registration_path
     when /the sign\s?in page/i
       new_user_session_path
     when /the sign\s?out page/i
       destroy_user_session_path
+    #
+    # Artists
+    #
     when /the new artist page/i
       new_user_artist_path(1)
+    #
+    # Albums
+    #
+    when /the new album page/i
+      new_user_artist_album_path(1,1)
 
 
     # Add more mappings here.

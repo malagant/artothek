@@ -25,3 +25,6 @@ Feature: Manage artists
     And I should see "Sign in Not registered? Sign up"
     And I go to the new artist page
     Then I should see "Sign in"
+
+  Scenario: Trying to delete an artist fails when not authenticated
+    pending

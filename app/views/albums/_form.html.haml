@@ -11,8 +11,7 @@
     = f.text_field :title
   .field
     = f.label :artist_id
-    = f.collection_select :artist_id, current_user.artists, :id, :name unless params[:artist_id]
-    = artist_name if params[:artist_id]
+    = f.collection_select :artist_id, current_user.artists, :id, :name
   .field
     = f.label :subtitle
     = f.text_field :subtitle

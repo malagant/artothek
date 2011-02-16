@@ -12,3 +12,4 @@ end
 Then /^I should see the following artists:$/ do |expected_artists_table|
   expected_artists_table.diff!(tableish('table tr', 'td,th'))
 end
+
