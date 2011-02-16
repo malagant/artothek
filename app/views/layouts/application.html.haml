@@ -5,5 +5,10 @@
     = stylesheet_link_tag :all
     = csrf_meta_tag
   %body
-    = render_widget 'login_info'
+    .login-info
+      = render_widget 'login_info'
+    .main-menu
+      = render_widget 'main_menu'
+    .notice
+      = notice
     = yield

@@ -58,6 +58,7 @@ GEM
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
     culerity (0.2.15)
+    daemons (1.0.10)
     devise (1.2.rc)
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.2)
@@ -65,8 +66,11 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    faker (0.9.5)
+      i18n (~> 0.4)
     ffi (0.6.3)
       rake (>= 0.8.7)
+    gem_plugin (0.2.3)
     gherkin (2.3.3)
       json (~> 1.4.6)
     haml (3.0.25)
@@ -79,12 +83,16 @@ GEM
     i18n (0.5.0)
     json (1.4.6)
     json_pure (1.5.1)
+    machinist (2.0.0.beta2)
     mail (2.2.15)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mongrel (1.2.0.pre2)
+      daemons (~> 1.0.10)
+      gem_plugin (~> 0.2.3)
     nokogiri (1.4.4)
     onfire (0.1.2)
     orm_adapter (0.0.4)
@@ -147,8 +155,11 @@ DEPENDENCIES
   capybara
   cucumber-rails
   devise (>= 1.2.rc)
+  faker
   haml (>= 3.0.0)
   haml-rails
+  machinist (>= 2.0.0.beta2)
+  mongrel (>= 1.2.0.pre2)
   rails (= 3.0.4)
   rspec-rails (>= 2.0.1)
   shoulda

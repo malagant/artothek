@@ -36,6 +36,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="faker" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="haml" version="3.0.0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
@@ -43,6 +49,18 @@
     <requirement>
       <requirement>
         <dependency name="haml-rails" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="machinist" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="mongrel" version="1.2.0.pre2" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
@@ -152,6 +170,12 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-mocks (v2.5.0, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/rspec-mocks-2.5.0)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] hooks (v0.1.3, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/hooks-0.1.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] onfire (v0.1.2, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/onfire-0.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] mongrel (v1.2.0.pre2, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/mongrel-1.2.0.pre2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] daemons (v1.0.10, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/daemons-1.0.10)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] gem_plugin (v0.2.3, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/gem_plugin-0.2.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] machinist (v1.0.6, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/machinist-1.0.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] faker (v0.9.5, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/faker-0.9.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] machinist (v2.0.0.beta2, /Users/mjohann/.rvm/gems/ruby-1.9.2-p136@global/gems/machinist-2.0.0.beta2)" level="application" />
   </component>
 </module>
 
