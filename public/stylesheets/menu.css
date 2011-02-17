@@ -1,0 +1,22 @@
+ul#menu {
+    padding: 0;
+    list-style-type: none;
+    height: 40px;
+    text-transform: uppercase;
+    background: transparent url("/images/blue.jpg") repeat-x top left;
+}
+
+
+ul#menu li a {
+    display: block;
+    float: left;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px 0 20px;
+    height: 40px;
+}
+
+ul#menu li a:hover {
+    background: transparent url("/images/black.jpg") repeat-x top left;
+}
+

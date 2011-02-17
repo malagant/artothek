@@ -2,13 +2,28 @@
 %html
   %head
     %title Artothek
-    = stylesheet_link_tag :all
+    = stylesheet_link_tag 'blueprint/screen'
+    = stylesheet_link_tag 'blueprint/plugins/fancy-type/screen'
+    = stylesheet_link_tag 'menu'
     = csrf_meta_tag
-  %body
-    .login-info
+  %body.container
+    .login-info.right
       = render_widget 'login_info'
-    .main-menu
+    #header.span-24.last
+      %h1
+        = image_tag('cd.jpeg')
+        arthotek
+    %hr
+    #sub-header.span-24.last
+      %h3.alt The place to manage your bunch of CDs
+    %hr
+    #main-menu
       = render_widget 'main_menu'
-    .notice
-      = notice
-    = yield
+    - if notice
+      .notice
+        = notice
+    #content.span-17.colborder
+      = yield
+    #sidebar.span-6.last
+      #recent-comments
+        = render_widget :recent_comments
