@@ -5,7 +5,7 @@
     = stylesheet_link_tag 'blueprint/screen'
     = stylesheet_link_tag 'blueprint/plugins/fancy-type/screen'
     = stylesheet_link_tag 'menu'
-    = stylesheet_link_tag 'buttons'
+    = stylesheet_link_tag 'blueprint/plugins/buttons/screen'
     = stylesheet_link_tag 'css/cupertino/jquery-ui-1.8.9.custom'
     = javascript_include_tag 'jquery'
     = javascript_include_tag 'jquery-ui-1.8.9.custom.min'
@@ -28,6 +28,9 @@
     - if notice
       .success
         = notice
+    - if alert
+      .alert
+        = alert
     #content.span-17.colborder
       = yield
     #sidebar.span-6.last

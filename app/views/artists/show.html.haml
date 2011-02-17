@@ -1,9 +1,17 @@
-%p#notice= notice
-
 %p
   %b Artist name:
-  = @artist.arist_name
-
+  = @artist.artist_name
+%p
+  %b Real name:
+  = @artist.real_name
+%p
+  %b Homepage:
+  = link_to @artist.homepage
+%p
+  %b Twitter:
+  = link_to @artist.twitter, twitter_url(@artist.twitter)
+%h2 Albums of #{@artist.artist_name}
+= render_widget :album_list, :albums => @artist.albums
 = link_to 'Edit', edit_artist_path(@artist)
 \|
 = link_to 'Back', artists_path

@@ -3,16 +3,15 @@
 %p Here you can view all #{link_to 'users', users_path}
 %h3 If you like, you can search for the following:
 = form_for('search', :url => '', :html => { :method => 'get'}) do |f|
-  %fieldset
-    %p
-      %label Album
-      %br
-      = f.text_field :album_title, :class => 'text'
-      %br
-      = submit_for('Search')
-    %p
-      %label Tracks
-      %br
-      = f.text_field :album_tracks, :class => 'text'
-      %br
-      = submit_for('Search')
+  %p
+    %label Album
+    %br
+    = f.text_field :album_title, :class => 'text'
+    = submit_for('Search')
+    %br
+  %p
+
+    %label Tracks
+    %br
+    = f.text_field :album_tracks, :class => 'text'
+    = submit_for('Search')

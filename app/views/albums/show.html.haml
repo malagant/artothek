@@ -1,9 +1,5 @@
 %p
-<<<<<<< HEAD
-  = image_tag(@album.cover.url(:medium))
-=======
   = image_tag @album.cover.url(:medium)
->>>>>>> new_features
 %p
   %b Title:
   = @album.title
@@ -17,8 +13,11 @@
   %b Issue date:
   = @album.issue_date
 
-= render :partial => 'tracks/track_list', :locals => { :tracks => @album.tracks }
-- if manager(@album.user)
-  = link_to 'Edit', edit_user_album_path(@album)
+= render_widget :track_list, :tracks => @album.tracks
+
+- if can? :manage, @album
+  = link_to 'New Track', new_album_track_path(@album)
   \|
-= link_to 'Back', user_albums_path
+  = link_to 'Edit', edit_album_path(@album)
+  \|
+= link_to 'Back', user_albums_path(@album.user)

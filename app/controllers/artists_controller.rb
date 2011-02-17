@@ -1,28 +1,23 @@
 class ArtistsController < ApplicationController
-  before_filter :authenticate_user!
+  load_and_authorize_resource
 
-  # GET /artists
   def index
-    @artists = current_user.artists
-    @user = current_user
+    @user = User.find(params[:user_id])
+    @artists = @user.artists
   end
 
-  # GET /artists/1
   def show
     @artist = Artist.find(params[:id])
   end
 
-  # GET /artists/new
   def new
     @artist = Artist.new
   end
 
-  # GET /artists/1/edit
   def edit
     @artist = Artist.find(params[:id])
   end
 
-  # POST /artists
   def create
     @artist = Artist.new(params[:artist])
     @artist.user = current_user
@@ -36,7 +31,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # PUT /artists/1
   def update
     @artist = Artist.find(params[:id])
 
@@ -49,7 +43,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # DELETE /artists/1
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy

@@ -1,4 +1,15 @@
 %h1 User list
-%ul
+%table
+  %thead
+    %th Nickname
+    %th Real name
+    %th Artist
+    %th Album
+  %tbody
   - @users.each do |user|
-    %li= link_to user.email, user
+    %tr
+      %td= link_to user.nickname, user
+      %td= user.full_name
+      %td= link_to 'Artists', user_artists_path(user)
+      %td= link_to 'Albums', user_albums_path(user)
+%br

@@ -1,87 +1,56 @@
 class TracksController < ApplicationController
-  before_filter :authenticate_user!, :except => [ :index, :show ]
-  # GET /tracks
-  # GET /tracks.xml
-  def index
-    @user   = User.find(params[:user_id])
-    @album = @user.albums.find(params[:album_id])
-    @tracks = @album.tracks
+  load_and_authorize_resource
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tracks }
-    end
+  def index
+    @album = Album.find(params[:album_id])
+    @tracks = @album.tracks
   end
 
-  # GET /tracks/1
-  # GET /tracks/1.xml
   def show
     @track = Track.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @track }
-    end
   end
 
-  # GET /tracks/new
-  # GET /tracks/new.xml
   def new
-    @track = Track.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @track }
-    end
+    @album = Album.find(params[:album_id])
+    @track = @album.tracks.new
   end
 
-  # GET /tracks/1/edit
   def edit
     @track = Track.find(params[:id])
+    @album = @track.album
   end
 
-  # POST /tracks
-  # POST /tracks.xml
   def create
     @track = Track.new(params[:track])
     @track.album_id = params[:album_id]
 
     respond_to do |format|
       if @track.save
-        format.html { redirect_to(album_track_path(params[:album_id], @track), :notice => 'Track was successfully created.') }
-        format.xml  { render :xml => @track, :status => :created, :location => @track }
+        format.html { redirect_to(artist_album_path(@track.album.artist, params[:album_id]), :notice => 'Track was successfully created.') }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @track.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /tracks/1
-  # PUT /tracks/1.xml
   def update
     @track = Track.find(params[:id])
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
-        format.html { redirect_to(@track, :notice => 'Track was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to(user_album_tracks_path(current_user, params[:album_id]), :notice => 'Track was successfully updated.') }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @track.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /tracks/1
-  # DELETE /tracks/1.xml
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tracks_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to(album_tracks_path(params[:album_id])) }
     end
   end
 end

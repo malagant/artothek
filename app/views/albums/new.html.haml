@@ -2,4 +2,7 @@
 
 = render 'form'
 
-= link_to 'Back', user_albums_path
+- if params[:artist_id]
+  = link_to 'Back', artist_albums_path
+- if params[:user_id]
+  = link_to 'Back', user_albums_path

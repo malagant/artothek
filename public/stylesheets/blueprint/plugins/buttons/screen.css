@@ -12,15 +12,14 @@
 
 a.button, button {
   display:block;
-  float:left;
   margin: 0.7em 0.5em 0.7em 0;
   padding:5px 10px 5px 7px;   /* Links */
   
-  border:1px solid #dedede;
-  border-top:1px solid #eee;
-  border-left:1px solid #eee;
+  border:1px solid #bebebe;
+  border-top:1px solid #ccc;
+  border-left:1px solid #ccc;
 
-  background-color:#f5f5f5;
+  background-color:#d5d5d5;
   font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
   font-size:100%;
   line-height:130%;

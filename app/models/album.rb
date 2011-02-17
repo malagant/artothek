@@ -1,7 +1,7 @@
 class Album < ActiveRecord::Base
   belongs_to :artist
   belongs_to :user
-  has_many :tracks
+  has_many :tracks, :dependent => :destroy
 
   has_attached_file :cover, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   acts_as_commentable

@@ -1,3 +1,6 @@
-= render :partial => 'track_list', :locals => { :tracks => @tracks }
+= render_widget :track_list, :tracks => @tracks
 
+- if can? :manage, @album
+  = link_to 'New Track', new_album_track_path(@album)
+  \|
 = link_to 'Back', user_album_path(@album.user, @album)

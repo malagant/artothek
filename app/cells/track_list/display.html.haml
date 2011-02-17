@@ -1,0 +1,19 @@
+%h1 Listing tracks
+
+%table
+  %thead
+    %th Title
+    %th Duration
+    %th Actions
+  %tbody
+  - @tracks.each do |track|
+    %tr
+      %td= track.title
+      %td= track.duration
+      - if current_user == track.album.user
+        %td
+          = link_to 'Edit', edit_album_track_path(track.album, track)
+          %br
+            = link_to 'Destroy', album_track_path(track.album, track), :confirm => 'Are you sure?', :method => :delete
+%br
+

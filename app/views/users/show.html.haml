@@ -1,15 +1,21 @@
 %h1 User details
 %p Here you can read about the artists and albums.
-%p
+%br
   %strong Email
-  #{@user.email}
-%p
-  %strong Artists
-  #{link_to 'Artists', user_artists_path(@user)}
+  = mail_to @user.email
+  %br
+    %strong Nick name
+    #{@user.nickname}
+    %br
+      %strong Name
+      #{@user.full_name}
+      %br
+        %strong Artists
+        #{link_to 'Artists', user_artists_path(@user)}
+%h2 Albums of #{@user.nickname}
+= render_widget :album_list, :albums => @user.albums
 
-= render :partial => 'albums/album_list', :locals => {:albums => @user.albums}
-
-- if manager(@user)
+- if can? :manage, Album
   - unless @user.artists.empty?
     = link_to 'New album', new_user_album_path(@user)
     \|

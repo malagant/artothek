@@ -1,5 +1,10 @@
-= render :partial => 'album_list', :locals => { :albums => @user.albums }
-- if manager(@user)
-  = link_to 'New album', new_user_album_path(@user)
-  \|
-= link_to 'Back', @user
+- user = @user ? @user : @artist.user
+= render_widget :album_list, :albums => user.albums
+%br
+  - if can? :manage, Album
+    - if @artist
+      = link_to 'New album', new_artist_album_path(@artist)
+    - if @user
+      = link_to 'New album', new_user_album_path(user)
+    \|
+  = link_to 'Back', user

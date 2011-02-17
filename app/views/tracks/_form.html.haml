@@ -1,16 +1,18 @@
-= form_for :track, :url => album_tracks_path, :html => { :method => 'post' } do |f|
+= form_for [:album,@track] do |f|
   -if @track.errors.any?
-    #error_explanation
+    .error
       %h2= "#{pluralize(@track.errors.count, "error")} prohibited this track from being saved:"
       %ul
         - @track.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  %p
     = f.label :title
-    = f.text_field :title
-  .field
+    %br
+    = f.text_field :title, :class => 'text'
+  %p
     = f.label :duration
-    = f.text_field :duration
-  .actions
-    = f.submit 'Save'
+    %br
+    = f.text_field :duration, :class => 'text'
+  %p
+    = submit_for 'Save'

@@ -1,6 +1,6 @@
-= form_for :album, :url => user_albums_path(current_user), :html => { :multipart => true, :method => 'post'} do |f|
+= form_for([current_user, @album], :html => { :multipart => true}) do |f|
   -if @album.errors.any?
-    #error_explanation
+    .error
       %h2= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
       %ul
         - @album.errors.full_messages.each do |msg|
@@ -29,6 +29,6 @@
     = f.label :cover
     %br
     = f.file_field :cover
-  %hr
   %p
+    %br
     = submit_for('Save')
