@@ -13,7 +13,7 @@ gem "faker", :group => :test
 gem "devise", ">= 1.2.rc"
 gem "hpricot"
 gem "ruby_parser"
-gem 'thinking-sphinx', '2.0.0', :require => 'thinking_sphinx'
+gem 'thinking-sphinx', '>= 2.0.1', :require => 'thinking_sphinx'
 gem "paperclip"
 gem "acts_as_commentable"
 gem "haml", ">= 3.0.0"
