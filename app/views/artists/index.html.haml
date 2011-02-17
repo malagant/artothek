@@ -2,12 +2,18 @@
 
 %table
   %tr
-    %th Name
+    %th Artist Name
+    %th Real name
+    %th Homepage
+    %th Twitter
     %th{:colspan => 4} Actions
 
   - @artists.each do |artist|
     %tr
-      %td= artist.artist_name
+      %td= link_to artist.artist_name, user_artist_path(@user, artist)
+      %td= artist.real_name
+      %td= link_to artist.homepage, artist.homepage
+      %td= link_to artist.twitter, twitter_url(artist.twitter)
       %td= link_to 'Show', user_artist_path(current_user, artist)
       %td= link_to 'Edit', edit_user_artist_path(current_user, artist)
       %td= link_to 'Destroy', user_artist_path(current_user, artist), :confirm => 'Are you sure?', :method => :delete

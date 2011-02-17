@@ -4,6 +4,7 @@ class ArtistsController < ApplicationController
   # GET /artists
   def index
     @artists = current_user.artists
+    @user = current_user
   end
 
   # GET /artists/1
