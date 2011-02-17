@@ -4,4 +4,7 @@ class Album < ActiveRecord::Base
   has_many :tracks
 
   has_attached_file :cover, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  acts_as_commentable
+
+  validates :title, :presence => true
 end

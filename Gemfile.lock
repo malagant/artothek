@@ -28,6 +28,7 @@ GEM
       activemodel (= 3.0.4)
       activesupport (= 3.0.4)
     activesupport (3.0.4)
+    acts_as_commentable (3.0.1)
     apotomo (1.0.4)
       cells (~> 3.4.0)
       hooks (~> 0.1.3)
@@ -81,6 +82,7 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     hooks (0.1.3)
+    hpricot (0.8.3)
     i18n (0.5.0)
     json (1.4.6)
     json_pure (1.5.1)
@@ -133,12 +135,15 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.5.0)
+    ruby_parser (2.0.5)
+      sexp_processor (~> 3.0)
     rubyzip (0.9.4)
     selenium-webdriver (0.1.3)
       childprocess (~> 0.1.5)
       ffi (~> 0.6.3)
       json_pure
       rubyzip
+    sexp_processor (3.0.5)
     shoulda (2.11.3)
     simple_form (1.3.1)
     sqlite3 (1.3.3)
@@ -156,6 +161,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_commentable
   apotomo
   capybara
   cucumber-rails
@@ -164,11 +170,13 @@ DEPENDENCIES
   faker
   haml (>= 3.0.0)
   haml-rails
+  hpricot
   machinist (>= 2.0.0.beta2)
   mongrel (>= 1.2.0.pre2)
   paperclip
   rails (= 3.0.4)
   rspec-rails (>= 2.0.1)
+  ruby_parser
   shoulda
   simple_form
   sqlite3

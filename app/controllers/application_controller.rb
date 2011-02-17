@@ -6,5 +6,6 @@ class ApplicationController < ActionController::Base
   has_widgets do |root|
     root << widget(:login_info, 'login_info', :display)
     root << widget(:main_menu, 'main_menu', :display)
+    root << widget(:recent_comments, 'recent_comments', :display)
   end
 end
