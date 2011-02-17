@@ -7,4 +7,12 @@ class Album < ActiveRecord::Base
   acts_as_commentable
 
   validates :title, :presence => true
+
+  define_index do
+    indexes title, :sortable => true
+    indexes tracks(:title), :as => :tracks, :sortable => true
+    indexes artist(:artist_name), :as => :artist, :sortable => true
+
+    has artist_id, created_at, updated_at
+  end
 end

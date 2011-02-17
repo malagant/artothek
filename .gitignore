@@ -3,5 +3,6 @@ db/*.sqlite3
 log/*.log
 tmp/
 config/database.yml
+config/sphinx.yml
 .idea
 public/system

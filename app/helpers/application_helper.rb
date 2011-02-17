@@ -7,6 +7,10 @@ module ApplicationHelper
     button_for(name, :class => 'submitBtn', :type => 'submit')
  end
 
+  def twitter_url(user_name)
+    "http://twitter.com/#{user_name}"
+  end
+
   private
 
   def button_for(name, options = {})
