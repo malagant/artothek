@@ -1,6 +1,6 @@
 class Artist < ActiveRecord::Base
   belongs_to :user
-  has_many :albums
+  has_many :albums, :dependent => :destroy
 
-  validates :name, :presence => true, :uniqueness => true
+  validates :artist_name, :presence => true, :uniqueness => true
 end

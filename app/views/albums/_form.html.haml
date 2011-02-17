@@ -5,30 +5,30 @@
       %ul
         - @album.errors.full_messages.each do |msg|
           %li= msg
-  %fieldset
-    %p
-      = f.label :title
-      %br
-      = f.text_field :title
-    %p
-      = f.label :artist_id
-      %br
-      = f.collection_select :artist_id, current_user.artists, :id, :name
-    %p
-      = f.label :subtitle
-      %br
-      = f.text_field :subtitle
-    %p
-      = f.label :description
-      %br
-      = f.text_area :description
-    %p
-      = f.label :issue_date
-      %br
-      = f.date_select :issue_date
-    %p
-      = f.label :cover
-      %br
-      = f.file_field :cover
-    %p
-      = f.submit 'Save'
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title, :class => 'text'
+  %p
+    = f.label :artist_id
+    %br
+    = f.collection_select :artist_id, current_user.artists, :id, :artist_name, {}, :class => 'select'
+  %p
+    = f.label :issue_date
+    %br
+    = f.text_field :issue_date, :id => 'datepicker', :class => 'text'
+  %p
+    = f.label :subtitle
+    %br
+    = f.text_field :subtitle, :class => 'text'
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description, :rows => 5, :class => 'textarea'
+  %p
+    = f.label :cover
+    %br
+    = f.file_field :cover
+  %hr
+  %p
+    = submit_for('Save')

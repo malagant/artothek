@@ -5,7 +5,7 @@ User.blueprint do
 end
 
 Artist.blueprint do
-  name { Faker::Name }
+
 end
 
 Album.blueprint do

@@ -7,12 +7,14 @@
 
   - @artists.each do |artist|
     %tr
-      %td= artist.name
+      %td= artist.artist_name
       %td= link_to 'Show', user_artist_path(current_user, artist)
       %td= link_to 'Edit', edit_user_artist_path(current_user, artist)
       %td= link_to 'Destroy', user_artist_path(current_user, artist), :confirm => 'Are you sure?', :method => :delete
       %td= link_to 'Albums', user_artist_albums_path(current_user, artist)
 %br
 
-- if current_user && current_user == @user
-  = link_to 'New Artist', new_user_artist_path
+- if manager(current_user)
+  = link_to 'New Artist', new_user_artist_path(current_user)
+  \|
+= link_to 'Back', @user

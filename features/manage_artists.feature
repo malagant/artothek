@@ -8,7 +8,7 @@ Feature: Manage artists
     And I am on the home page
     Then I should see "You are logged in as mjohann@web.de"
     And I go to the new artist page
-    And I fill in "artist_name" with "Johann Könich"
+    And I fill in "Artist name" with "Johann Könich"
     And I press "Save"
     Then I should see "Artist was successfully created."
 
