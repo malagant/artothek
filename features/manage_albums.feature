@@ -10,11 +10,11 @@ Feature: Manage albums
     And I select "<artist>" from "Artist"
     And I fill in "Subtitle" with "<subtitle>"
     And I fill in "Description" with "<description>"
-    And I select "<issue_date>" as the "album_issue_date" date
+    And I fill in "album[issue_date]" with "<issue_date>"
     And I press "Save"
     Then I should see "Album was successfully created."
 
   Examples:
-    | title  | subtitle         | description | issue_date      | artist            |
-    | One    | The second album | Lorem ipsum | 11 January 2010 | Helge Schneider   |
-    | Two    | The third album  | Lorem ipsum | 11 January 2010 | Helge Schneider   |
+    | title  | subtitle         | description | issue_date | artist            |
+    | One    | The second album | Lorem ipsum | 2010-01-11 | Helge Schneider   |
+    | Two    | The third album  | Lorem ipsum | 2011-05-08 | Helge Schneider   |

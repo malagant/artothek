@@ -5,6 +5,12 @@
     = stylesheet_link_tag 'blueprint/screen'
     = stylesheet_link_tag 'blueprint/plugins/fancy-type/screen'
     = stylesheet_link_tag 'menu'
+    = stylesheet_link_tag 'buttons'
+    = stylesheet_link_tag 'css/cupertino/jquery-ui-1.8.9.custom'
+    = javascript_include_tag 'jquery'
+    = javascript_include_tag 'jquery-ui-1.8.9.custom.min'
+    = javascript_include_tag 'rails'
+    = javascript_include_tag 'application'
     = csrf_meta_tag
   %body.container
     .login-info.right
@@ -20,7 +26,7 @@
     #main-menu
       = render_widget 'main_menu'
     - if notice
-      .notice
+      .success
         = notice
     #content.span-17.colborder
       = yield

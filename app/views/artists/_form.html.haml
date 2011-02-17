@@ -1,13 +1,35 @@
-= form_for :artist, :url => user_artists_path(current_user), :html => { :method => 'post' } do |f|
+= form_for [current_user, @artist] do |f|
   -if @artist.errors.any?
-    #error_explanation
+    #error_explanation.error
       %h2= "#{pluralize(@artist.errors.count, "error")} prohibited this artist from being saved:"
       %ul
         - @artist.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit 'Save'
+  %p
+    = f.label :artist_name
+    %br
+    = f.text_field :artist_name, :class => 'text'
+  %p
+    = f.label :first_name
+    %br
+    = f.text_field :first_name, :class => 'text'
+  %p
+    = f.label :last_name
+    %br
+    = f.text_field :last_name, :class => 'text'
+  %p
+    = f.label :email
+    %br
+    = f.text_field :email, :class => 'text'
+  %p
+    = f.label :homepage
+    %br
+    = f.text_field :homepage, :class => 'text'
+  %p
+    = f.label :twitter
+    %br
+    = f.text_field :twitter, :class => 'text'
+  %hr
+  %p
+    = submit_for('Save')

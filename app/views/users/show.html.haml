@@ -1,7 +1,18 @@
-%h2 User details
-%p Email #{@user.email}
+%h1 User details
+%p Here you can read about the artists and albums.
+%p
+  %strong Email
+  #{@user.email}
+%p
+  %strong Artists
+  #{link_to 'Artists', user_artists_path(@user)}
+
 = render :partial => 'albums/album_list', :locals => {:albums => @user.albums}
 
-= link_to 'New album', new_user_album_path(@user) if current_user == @user && !@user.artists.empty?
-= link_to 'New artist', new_user_artist_path(@user) if current_user == @user
+- if manager(@user)
+  - unless @user.artists.empty?
+    = link_to 'New album', new_user_album_path(@user)
+    \|
+  = link_to 'New artist', new_user_artist_path(@user)
+  \|
 = link_to 'Back', users_path
