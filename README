@@ -26,6 +26,7 @@ Some technologies used in this project are:
 
 - Search not executed right now although indexes defined in Album model
 - Cucumber features broken due to some routes refactored
+- rspec model tests (validations etc.)
 - Capistrano recipe needed to deploy without pain
 
 = License =
