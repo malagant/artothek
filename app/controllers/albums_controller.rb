@@ -1,6 +1,10 @@
 class AlbumsController < ApplicationController
   load_and_authorize_resource
 
+  has_widgets do |root|
+    root << widget(:comments, 'album_comments', :album => @album)
+  end
+
   def index
     if params[:artist_id]
       @artist = Artist.find(params[:artist_id])

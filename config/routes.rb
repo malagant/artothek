@@ -7,11 +7,14 @@ Artothek::Application.routes.draw do
   end
   resources :albums do
     resources :tracks
+    resources :comments
   end
 
   resources :users do
     resources :albums
   end
+
+  resources :comments
 
   resources :artists do
     resources :albums

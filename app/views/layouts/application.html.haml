@@ -18,7 +18,7 @@
     #header.span-24.last
       %h1
         = image_tag('cd.jpeg')
-        arthotek
+        ART-O-THEK  - CD management
     %hr
     #sub-header.span-24.last
       %h3.alt The place to manage your bunch of CDs
@@ -36,3 +36,5 @@
     #sidebar.span-6.last
       #recent-comments
         = render_widget :recent_comments
+      #search
+        = render_widget 'search_form'

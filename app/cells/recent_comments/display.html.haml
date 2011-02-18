@@ -2,4 +2,10 @@
  %h3.caps Recent comments
  .box
   - for comment in @comments
-   .quiet= comment.title
+   .quiet
+    Album: #{link_to comment.commentable.title, artist_album_path(comment.commentable.artist, comment.commentable)}
+    %br
+    = comment.title
+    %br
+    = comment.comment
+   %br

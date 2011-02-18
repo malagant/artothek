@@ -13,5 +13,6 @@ class ApplicationController < ActionController::Base
     root << widget(:recent_comments, 'recent_comments', :display)
     root << widget(:album_list, 'album_list', :display)
     root << widget(:track_list, 'track_list', :display)
+    root << widget(:search_form, 'search_form', :display)
   end
 end

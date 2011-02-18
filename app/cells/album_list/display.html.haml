@@ -14,7 +14,7 @@
       %td
         = link_to album.title, user_album_path(album.user, album)
         %br
-          = link_to album.artist.artist_name, album.artist
+          = link_to album.artist.artist_name, artist_albums_path(album.artist)
       %td= link_to 'Tracks', album_tracks_path(album)
       %td= album.subtitle
       %td= album.description

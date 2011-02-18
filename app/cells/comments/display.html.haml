@@ -1,0 +1,22 @@
+%h1
+  Comments
+= form_for([@album, @new_comment]) do |f|
+  %fieldset
+    %legend New comment
+    %p
+      Title
+      %br
+      = f.text_field :title, :class => 'text'
+    %p
+      Title
+      %br
+      = f.text_area :comment, :class => 'comment', :rows => 5
+    %p
+      = f.submit 'Save', :class => 'button'
+%p
+  - for comment in @comments
+    .notice
+      %strong
+        = comment.title
+      %br
+        = comment.comment
