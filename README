@@ -1,6 +1,6 @@
 == Welcome ART-O-THEK ==
 
-This i a showcase project for using Ruby on Rails with the following features and technologies.
+This is a showcase project for using Ruby on Rails with the following features and technologies.
 You can mainly manage your collection of CDs (or any other media which is based on artists, albums and tracks).
 
 Particular features include:
@@ -27,3 +27,7 @@ Some technologies used in this project are:
 - Search not executed right now although indexes defined in Album model
 - Cucumber features broken due to some routes refactored
 - Capistrano recipe needed to deploy without pain
+
+= License =
+
+Do whatever you want with this ;)
