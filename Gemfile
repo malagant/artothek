@@ -21,4 +21,5 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "apotomo", :require => "apotomo"
 gem "mongrel", ">= 1.2.0.pre2"
+gem "shadow_puppet"
 
