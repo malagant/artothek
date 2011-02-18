@@ -1,8 +1,9 @@
+%h1 Details for #{@album.title}
 %p
   = image_tag @album.cover.url(:medium)
 %p
-  %b Title:
-  = @album.title
+  %b Artist:
+  = link_to @album.artist.artist_name, user_artist_path(@album.user, @album.artist)
 %p
   %b Subtitle:
   = @album.subtitle

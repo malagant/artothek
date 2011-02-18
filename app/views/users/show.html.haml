@@ -16,9 +16,9 @@
 = render_widget :album_list, :albums => @user.albums
 
 - if can? :manage, Album
-  - unless @user.artists.empty?
-    = link_to 'New album', new_user_album_path(@user)
-    \|
+  = link_to 'New album', new_user_album_path(@user)
+  \|
+- if can? :manage, Artist
   = link_to 'New artist', new_user_artist_path(@user)
   \|
 = link_to 'Back', users_path

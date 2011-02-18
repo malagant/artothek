@@ -10,4 +10,5 @@ end
 
 Album.blueprint do
   title
+  artist { Artist.make!(:artist_name => Faker::Name.name) }
 end

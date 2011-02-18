@@ -1,17 +1,21 @@
+%h1 Details for #{@artist.artist_name}
 %p
   %b Artist name:
   = @artist.artist_name
-%p
-  %b Real name:
-  = @artist.real_name
-%p
-  %b Homepage:
-  = link_to @artist.homepage
-%p
-  %b Twitter:
-  = link_to @artist.twitter, twitter_url(@artist.twitter)
+  %br
+    %b Real name:
+    = @artist.real_name
+    %br
+      %b Homepage:
+      = link_to @artist.homepage
+      %br
+        %b Twitter:
+        = link_to @artist.twitter, twitter_url(@artist.twitter)
 %h2 Albums of #{@artist.artist_name}
 = render_widget :album_list, :albums => @artist.albums
-= link_to 'Edit', edit_artist_path(@artist)
+- if can? :manage, Album
+  = link_to 'New Album', new_artist_album_path(@artist)
+  \|
+= link_to 'Edit', edit_user_artist_path(@artist.user, @artist)
 \|
-= link_to 'Back', artists_path
+= link_to 'Back', user_artists_path{@artist.user}

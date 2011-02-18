@@ -12,7 +12,7 @@
   %p
     = f.label :artist_id
     %br
-    = f.collection_select :artist_id, current_user.artists, :id, :artist_name, {}, :class => 'select'
+    = f.collection_select :artist_id, current_user.artists, :id, :artist_name, { :selected => params[:artist_id]}, :class => 'select'
   %p
     = f.label :issue_date
     %br

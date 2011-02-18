@@ -1,10 +1,13 @@
-- user = @user ? @user : @artist.user
-= render_widget :album_list, :albums => user.albums
+- resource = @user ? @user : @artist
+%h1 Listing of albums
+= render_widget :album_list, :albums => resource.albums
 %br
   - if can? :manage, Album
     - if @artist
       = link_to 'New album', new_artist_album_path(@artist)
+      \|
+      = link_to 'Back', user_artist_path(@artist.user, @artist)
     - if @user
-      = link_to 'New album', new_user_album_path(user)
-    \|
-  = link_to 'Back', user
+      = link_to 'New album', new_user_album_path(resource)
+      \|
+      = link_to 'Back', resource
