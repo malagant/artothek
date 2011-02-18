@@ -1,13 +1,19 @@
 require 'machinist/active_record'
 
-# Add your blueprints here.
-#
-# e.g.
-#   Post.blueprint do
-#     title { "Post #{sn}" }
-#     body  { "Lorem ipsum..." }
-#   end
+User.blueprint do
+  email { Faker::Internet::email }
+end
+
+Artist.blueprint do
+  tracks(3)
+end
+
+Album.blueprint do
+  title
+  artist { Artist.make!(:artist_name => Faker::Name.name) }
+end
 
 Track.blueprint do
-  # Attributes here
+  title
+  duration
 end

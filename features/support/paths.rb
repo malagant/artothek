@@ -28,12 +28,12 @@ module NavigationHelpers
     # Albums
     #
     when /the new album page/i
-      new_artist_album_path(1,1)
+      new_user_album_path(@user)
     #
     # Tracks
     #
     when /the new album track page/i
-      new_album_track_path(1,1)
+      new_album_track_path(@album)
 
 
     # Add more mappings here.
