@@ -15,6 +15,7 @@ Particular features include:
 Some technologies used in this project are:
 
 - HAML for the views
+- Blueprint CSS for simple layout without hassle
 - Apotomo widgets for some partials
 - Devise for user management
 - Thinking Sphinx for search (requires Sphinx and MySQL/PostgreSQL, SQLite3 not supported)
