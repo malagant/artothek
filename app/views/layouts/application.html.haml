@@ -9,6 +9,7 @@
     = stylesheet_link_tag 'css/cupertino/jquery-ui-1.8.9.custom'
     = javascript_include_tag 'jquery'
     = javascript_include_tag 'jquery-ui-1.8.9.custom.min'
+    = javascript_include_tag 'jquery.ui.autocomplete'
     = javascript_include_tag 'rails'
     = javascript_include_tag 'application'
     = csrf_meta_tag
@@ -34,7 +35,7 @@
     #content.span-17.colborder
       = yield
     #sidebar.span-6.last
-      #recent-comments
-        = render_widget :recent_comments
       #search
         = render_widget 'search_form'
+      #recent-comments
+        = render_widget :recent_comments

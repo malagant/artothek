@@ -1,4 +1,7 @@
 Artothek::Application.routes.draw do
+  match "/search", :to => "search#index"
+
+  get "search/index"
 
   devise_for :users
 

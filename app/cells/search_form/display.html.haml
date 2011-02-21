@@ -1,8 +1,8 @@
 #search-form
   %h3.caps Search for Music
   .box
-    = form_for('search', :url => '', :html => { :method => 'get'}) do |f|
-      %label Search for Albums, Artists and Tracks
-      = f.text_field :album_title
+    %label Search for Albums, Artists and Tracks
+    %form{:action => "/search", :method => "get"}
+      = text_field_tag "search_form-field", "", 'data-load-event-url' => url_for_event(:typing)
       = content_tag(:button, content_tag(:span, 'Search'), :class => 'button', :type => 'submit')
   %br

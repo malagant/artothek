@@ -25,7 +25,6 @@ Some technologies used in this project are:
 
 = TODOs =
 
-- Search not executed right now although indexes defined in Album model
 - rspec model tests (validations etc.)
 - Ajaxification
 - Capistrano recipe needed to deploy without pain

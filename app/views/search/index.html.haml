@@ -1,0 +1,4 @@
+%h1 Results for '#{params["search_form-field"]}'
+= render_widget 'album_list', :albums => @results
+
+= will_paginate @results
