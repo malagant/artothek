@@ -7,7 +7,10 @@ class SearchForm < Apotomo::Widget
   end
 
   def search
-    items = Album.search(param(:term))
+    items = Album.search(param(:term)).
+    collect do |t|
+      { :label => t.title}
+    end
     render :text => items.to_json
   end
 end
