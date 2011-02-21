@@ -8,7 +8,7 @@ class AlbumsController < ApplicationController
   def index
     if params[:artist_id]
       @artist = Artist.find(params[:artist_id])
-      @albums = @artist.albums
+      @albums = @artist.albums.paginate :page => params[:page], :per_page => 5
     elsif params[:user_id]
       @user = User.find(params[:user_id])
       @albums = @user.albums
