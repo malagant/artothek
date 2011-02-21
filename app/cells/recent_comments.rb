@@ -1,7 +1,7 @@
 class RecentComments < Apotomo::Widget
 
   def display
-    @comments = Comment.recent.limit(5).all
+    @comments = Comment.recent.paginate :page => params[:page], :per_page => 5
 
     render
   end

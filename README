@@ -27,7 +27,6 @@ Some technologies used in this project are:
 
 - Search not executed right now although indexes defined in Album model
 - rspec model tests (validations etc.)
-- pagination of artists, albums
 - Ajaxification
 - Capistrano recipe needed to deploy without pain
 

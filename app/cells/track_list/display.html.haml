@@ -6,6 +6,7 @@
     %th Duration
     %th Actions
   %tbody
+  = will_paginate @tracks
   - @tracks.each do |track|
     %tr
       %td= track.title

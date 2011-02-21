@@ -8,7 +8,8 @@
     %th Issue date
     %th{ :colspan => 4} Actions
   %tbody
-  - @albums.each do |album|
+  = will_paginate @albums
+  - for album in @albums
     %tr
       %td= image_tag album.cover.url(:thumb)
       %td

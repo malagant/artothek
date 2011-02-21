@@ -9,6 +9,7 @@
     %th Twitter
     %th{:colspan => 4} Actions
   %tbody
+  = will_paginate @artists
   - @artists.each do |artist|
     %tr
       %td= link_to artist.artist_name, user_artist_path(artist.user, artist)

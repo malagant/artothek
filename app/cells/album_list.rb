@@ -5,6 +5,7 @@ class AlbumList < Apotomo::Widget
 
   def display
     @albums = @opts[:albums]
+    @albums = @albums.paginate :page => params[:page], :per_page => 5
     render
   end
 end

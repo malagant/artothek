@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
       @albums = @artist.albums.paginate :page => params[:page], :per_page => 5
     elsif params[:user_id]
       @user = User.find(params[:user_id])
-      @albums = @user.albums
+      @albums = @user.albums.paginate :page => params[:page], :per_page => 5
     end
   end
 

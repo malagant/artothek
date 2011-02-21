@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @artists = @user.artists
+    @artists = @user.artists.paginate :page => params[:page], :per_page => 10
   end
 
   def show
