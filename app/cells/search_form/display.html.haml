@@ -4,5 +4,5 @@
     %label Search for Albums, Artists and Tracks
     %form{:action => "/search", :method => "get"}
       = text_field_tag "search_form-field", "", 'data-load-event-url' => url_for_event(:typing)
-      = content_tag(:button, content_tag(:span, 'Search'), :class => 'button', :type => 'submit')
+    = content_tag(:button, content_tag(:span, 'Search'), :class => 'button', :type => 'submit')
   %br
