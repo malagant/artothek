@@ -38,7 +38,7 @@ class TracksController < ApplicationController
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
-        format.html { redirect_to(user_album_tracks_path(current_user, params[:album_id]), :notice => 'Track was successfully updated.') }
+        format.html { redirect_to(album_tracks_path(params[:album_id]), :notice => 'Track was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end
